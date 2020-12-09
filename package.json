@@ -1,8 +1,8 @@
 {
-  "name": "merchant-service",
+  "name": "nest-service",
   "private": true,
   "version": "1.0.0",
-  "description": "Merchant service applicated powered by Treet.app",
+  "description": "Nest service applicated",
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
