@@ -1,5 +1,5 @@
 db:
-  host: 'localhost'
+  host: 'merchant-db'
   username: 'postgres'
   database: 'merchantdb'
   password: 'postgres'
