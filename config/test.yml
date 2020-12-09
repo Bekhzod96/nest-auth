@@ -1,0 +1,22 @@
+server:
+  port: 7002
+
+frontend:
+  url: 'http://localhost:4002'
+
+db:
+  type: 'localhost'
+  port: 5432
+  database: 'testDB'
+  host: 'postgres'
+  username: 'postgres'
+  password: 'postgres'
+  synchronize: true
+
+jwt:
+  JWT_ACCESS_TOKEN_EXPIRES: 900
+  JWT_REFRESH_TOKEN_EXPIRES: 3600
+  APPLICATION_SECRET: 'ThisIsTopSecretOfThisApplicaiton'
+  JWT_ACCESS_TOKEN_SECRET: 'ThisIsTopSecretOfToken'
+  JWT_REFRESH_TOKEN_SECRET: 'ThisSecredUsedByRefToken'
+  JWT_REFRESH_TOKEN_SALT: 'ThisSecredUsedByRefTokenSatting'

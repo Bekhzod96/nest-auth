@@ -1,0 +1,47 @@
+version: '3.7'
+
+services:
+  merchant-api:
+    container_name: merchant-api
+    build:
+      context: .
+      target: ${NODE_ENV}
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - ${PORT}:${PORT}
+    command: npm run start:dev
+    networks:
+      - merchant-api
+    depends_on:
+      - postgres
+  postgres:
+    container_name: postgres
+    image: postgres:13
+    networks:
+      - merchant-api
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DATABASE}
+    ports:
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  # merchant-pgadmin:
+  #   container_name: merchant-pgadmin
+  #   image: dpage/pgadmin4
+  #   networks:
+  #     - merchant-net
+  #   depends_on:
+  #     - merchant-db
+  #   ports:
+  #     - 8080:80
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: pg@admin.com
+  #     PGADMIN_DEFAULT_PASSWORD: pgadmin
+networks:
+  merchant-api:
+volumes:
+  pgdata:

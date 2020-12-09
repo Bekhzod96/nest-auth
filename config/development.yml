@@ -1,0 +1,12 @@
+db:
+  host: 'postgres'
+  username: 'postgres'
+  database: 'merchantdb'
+  password: 'postgres'
+  synchronize: true
+
+jwt:
+  APPLICATION_SECRET: 'ThisIsTopSecretOfThisApplicaiton'
+  JWT_ACCESS_TOKEN_SECRET: 'ThisIsTopSecretOfToken'
+  JWT_REFRESH_TOKEN_SECRET: 'ThisSecredUsedByRefToken'
+  JWT_REFRESH_TOKEN_SALT: 'ThisSecredUsedByRefTokenSatting'
